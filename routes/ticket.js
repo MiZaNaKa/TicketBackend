@@ -51,7 +51,7 @@ router.get('/sentToLeader/:id',withAuth, async(req, res, next)=> {
 
 
 
-router.get('/approveTicket/:id', async(req, res, next)=> {
+router.get('/approveTicket/:id',withAuth, async(req, res, next)=> {
   var id=req.params.id
   var result =await ticketService.approveTicket(id)
   res.send(result);
